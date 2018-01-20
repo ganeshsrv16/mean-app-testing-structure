@@ -12,7 +12,7 @@ const expect = require('chai').expect;
 
 
 
- // GET - List all colors
+//GET all student details
  it('should return all student details', function() {
     
     chai.request(app)
@@ -21,7 +21,7 @@ const expect = require('chai').expect;
        expect(res).to.have.status(200);
        expect(res).to.be.json;
      
-    //    expect(res).body.SUCCESS.name.should.equal('Java');
+    //    expect(res).body.SUCCESS.name.should.equal('name');
     //    expect(res.body).to.be.an('object');
     //    expect(res.body.results).to.be.an('array');
      });
@@ -40,7 +40,7 @@ const expect = require('chai').expect;
      });
  });
 
-//  // POST - Add new color
+//  // POST - Add new student details
  it('details posted', function() {
   return chai.request(app)
   .post('/mean/student')
