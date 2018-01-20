@@ -15,12 +15,12 @@ import {Ng2PaginationModule} from 'ng2-pagination';
 `]  
 })
 export class S2Component implements OnInit {
- p:number;
- jo:number=5;
- val:number;
- pid:number;
- pname:string;
- pbody:string;
+ p:number;    // p number of people
+ jo:number=5; // number of people per page
+ val:number; // this is the updation variable
+ pid:number; // person id
+ pname:string; // person name
+ pbody:string; // person body
   start: number;
   limit: number;
   nameList: nameL[];
