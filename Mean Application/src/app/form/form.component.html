@@ -1,0 +1,76 @@
+
+<div class="card" style="width: 60rem;">
+  <div class="card-body">
+    <h1 class="card-title">Student Details</h1>
+<br>
+
+    <form (ngSubmit)="show(f)" #f="ngForm" >
+      <div class="form-group"  [ngClass]="{'has-error':(jid.touched||jid.dirty)&&!jid.valid}">
+      
+        <label for="JOB ID">JOB ID</label>
+        <input type="num"  name="jid" [(ngModel)]=customer.jid  minlength="4" placeholder="Enter jobID" #jid="ngModel"  class="form-control" required>
+  <span class="help-block" *ngIf="jid.touched && !jid.valid">
+<span *ngIf="jid.errors.required">You didn't meet the requirements</span>
+<span  *ngIf="jid.errors.minlength">Enter  more than 3 characters</span>
+  </span>
+  
+      </div>
+      <div class="form-group"  [ngClass]="{'has-error':(Name.touched||Name.dirty)&&!Name.valid}">
+        <label for="Name">Name</label>
+        <input type="text" name="Name"  [(ngModel)]=customer.Name #Name="ngModel" minlength="3"  class="form-control">
+        <span class="help-block" *ngIf="Name.touched && !Name.valid">
+            <span *ngIf="Name.errors.required">You have not entered the name</span>
+            <span  *ngIf="Name.errors.minlength">Enter  more than 3 characters</span>
+              </span>
+      </div>
+      <div class="form-group"  [ngClass]="{'has-error':(favlang.touched||favlang.dirty)&&!favlang.valid}">
+        <label for="favlang">Favorite Language</label>
+        <input
+          type="text"
+         
+          name="favlang"
+          [(ngModel)]=customer.favlang   minlength="3"  #favlang="ngModel"
+          class="form-control"/>
+          <span class="help-block" *ngIf="favlang.touched && !favlang.valid">
+              <span *ngIf="favlang.errors.required">You have not entered the favorite language</span>
+              <span  *ngIf="favlang.errors.minlength">Enter  more than 3 characters</span>
+                </span>
+      </div>
+
+      <div class="form-group"  [ngClass]="{'has-error':(Percentage.touched||Percentage.dirty)&&!Percentage.valid}">
+          <label for="Percentage">Percentage </label>
+          <input type="num" name="Percentage" [(ngModel)]=customer.Percentage   minlength="3"  #Percentage="ngModel" class="form-control"/>
+            <span class="help-block" *ngIf="Percentage.touched && !Percentage.valid">
+                <span *ngIf="Percentage.errors.required">You have not entered the favorite language</span>
+                <span  *ngIf="Percentage.errors.minlength">Enter  more than 3 characters</span>
+                  </span>
+        </div>
+
+        <div class="form-group"  [ngClass]="{'has-error':(State.touched||State.dirty)&&!State.valid}">
+            <label for="state">State</label>
+            <input type="text" name="State"  [(ngModel)]=customer.State  #State="ngModel" class="form-control" minlength="3" />
+              <span class="help-block" *ngIf="State.touched && !State.valid">
+                  <span *ngIf="State.errors.required">You have not entered the state</span>
+                  <span  *ngIf="State.errors.minlength">Enter  more than 3 characters</span>
+                    </span>
+          </div>
+
+          <div class="form-group"  [ngClass]="{'has-error':(branch.touched||branch.dirty)&&!branch.valid}">
+              <label for="branch">Branch</label>
+              <input type="text"  name="branch" minlength="3"  [(ngModel)]=customer.branch #branch="ngModel"  class="form-control"/>
+                <span class="help-block" *ngIf="branch.touched && !branch.valid">
+                    <span *ngIf="branch.errors.required">You have not entered the branch</span>
+                    <span  *ngIf="branch.errors.minlength">Enter  more than 3 characters</span>
+                      </span>
+            </div>
+      <button class="btn btn-success" style="width:200px; height:50px"  type="submit" [disabled]="!f.valid">Sign Up</button>
+    </form>
+</div>
+</div>
+
+
+
+<br>Dirty:{{f.dirty}}
+<br>Touched:{{f.touched}}
+<br>Valid:{{f.valid}}
+<br>Value:{{f.value|json}}
