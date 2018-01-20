@@ -19,10 +19,10 @@ import {Ng2PaginationModule} from 'ng2-pagination';
 export class SComponent implements OnInit {
  
 start: number;
-jo:number=10;
+jo:number=10;  // number of images per page
 limit: number;
-jo1:string;
-st:ImageL[];
+
+ci:ImageL[];    // current image(ci)
 imgList: ImageL[];
 
   // tslint:disable-next-line:no-trailing-whitespace
@@ -51,15 +51,10 @@ imgList: ImageL[];
    }
   
  }
-   clear(no)
-   {
    
-     this.start= no;
-     this.display();
-   }
-   cImage(hey)
+   cImage(pic)
    {
-this.st=hey;
+this.ci=pic;
    }
    
      ngOnInit() {
