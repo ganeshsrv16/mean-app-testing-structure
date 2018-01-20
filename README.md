@@ -1,0 +1,1 @@
+# mean-app-testing-structure
